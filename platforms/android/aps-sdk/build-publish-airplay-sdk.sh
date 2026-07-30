@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 export ANDROID_NDK_HOME=$ANDROIDNDK_LINUX_R16
 export JAVA_HOME=$JDK8
