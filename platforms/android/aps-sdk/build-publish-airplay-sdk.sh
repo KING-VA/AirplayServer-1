@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
-export ANDROID_NDK_HOME=$ANDROIDNDK_LINUX_R16
-export JAVA_HOME=$JDK8
-export PATH=$JDK8/bin:$PATH
-export GRADLE_HOME=/data/rdm/apps/gradle/gradle-4.6
-export PATH=$GRADLE_HOME/bin:$PATH
+#!/usr/bin/env bash
+
+# GitHub Actions provides JAVA_HOME via actions/setup-java.
+echo "Using JAVA_HOME=$JAVA_HOME"
+java -version
+
+# Preserve NDK if available.
+if [ -n "$ANDROIDNDK_LINUX_R16" ]; then
+    export ANDROID_NDK_HOME="$ANDROIDNDK_LINUX_R16"
+fi
+
 
 mkdir -p bin
 pushd $(pwd)
