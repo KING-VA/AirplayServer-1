@@ -33,6 +33,10 @@ jobs:
           chmod +x platforms/android/aps-sdk/gradlew
           chmod +x platforms/android/aps-sdk/build-publish-airplay-sdk.sh
 
+      # - name: Remove generated files
+      #   run: |
+      #     find . -name ".externalNativeBuild" -type d -exec rm -rf {} +
+      #     find . -name ".cxx" -type d -exec rm -rf {} +
       - name: Build
         shell: bash
         run: |
